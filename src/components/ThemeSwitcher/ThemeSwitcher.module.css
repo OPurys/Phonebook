@@ -1,0 +1,43 @@
+.switchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.switchLabel {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(45deg, #ddd, #ccc);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.switchToggle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switchOn {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.toggleOn {
+  transform: translateX(30px);
+  background-color: #fff;
+}

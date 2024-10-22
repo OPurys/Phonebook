@@ -5,8 +5,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsModalDeleteOpen } from '../../redux/modal/selectors';
 import { closeModalDelete } from '../../redux/modal/slice';
@@ -15,9 +13,6 @@ import toast from 'react-hot-toast';
 
 export default function ModalDelete({ contact }) {
   const dispatch = useDispatch();
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
   const isModalDeleteOpen = useSelector(selectIsModalDeleteOpen);
 
   const handleModalDeleteClose = () => {
@@ -37,7 +32,6 @@ export default function ModalDelete({ contact }) {
   return (
     <React.Fragment>
       <Dialog
-        fullScreen={fullScreen}
         open={isModalDeleteOpen}
         onClose={handleModalDeleteClose}
         aria-labelledby="responsive-dialog-title"
