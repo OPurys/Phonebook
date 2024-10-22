@@ -1,26 +1,21 @@
 .wrapper {
   display: flex;
-  gap: 10px;
-  font-size: 20px;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
 }
 
 .btn {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  height: 30px;
-  border-radius: 3px;
-  color: #1a237e;
-  font-weight: 600;
-  background-color: #e4ebec;
-  box-shadow: 1px 1px 1px 1px rgba(26, 35, 126, 0.7);
-  transition: transform 250ms linear, box-shadow 250ms linear;
+  transition: background-color 0.3s;
+}
 
-  &:hover,
-  &:focus {
-    transform: scale(0.97);
-    box-shadow: none;
-  }
+.btn:hover,
+.btn:focus {
+  background-color: #0056b3;
 }

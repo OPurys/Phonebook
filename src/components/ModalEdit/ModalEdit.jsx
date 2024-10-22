@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsModalEditOpen } from '../../redux/modal/selectors';
@@ -18,7 +17,6 @@ export default function ModalEdit({ contact }) {
   return (
     <React.Fragment>
       <Dialog open={isModalEditOpen} onClose={handleModalEditClose}>
-        <DialogTitle>{'Edit'}</DialogTitle>
         <DialogContent sx={{ padding: 0 }}>
           <ModalEditForm contact={contact} onClose={handleModalEditClose} />
         </DialogContent>

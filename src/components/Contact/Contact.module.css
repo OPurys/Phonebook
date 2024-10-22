@@ -1,51 +1,50 @@
 .item {
-  padding: 10px;
-  min-height: 100px;
-  flex-basis: calc((100% - 45px) / 4);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px 3px rgba(26, 35, 126, 0.7);
-  background-color: #e3f2fd;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.item:hover {
+  background-color: #f9f9f9;
 }
 
 .subtitle {
   display: flex;
   align-items: center;
-  font-weight: 500;
-  gap: 5px;
+  font-size: 18px;
+  color: #333;
 }
 
 .phone {
-  padding-left: 3px;
   display: flex;
   align-items: center;
-  font-weight: 500;
-  gap: 7px;
+  font-size: 16px;
+  color: #666;
 }
 
 .wrapperButtons {
   display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
 .btn {
-  padding: 0 15px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
-  height: 30px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px 1px rgba(26, 35, 126, 0.7);
-  color: #1a237e;
-  font-weight: 600;
-  background-color: #e4ebec;
-  transition: transform 250ms linear, box-shadow 250ms linear;
+  transition: background-color 0.3s, transform 0.3s;
+}
 
-  &:hover,
-  &:focus {
-    transform: scale(0.97);
-    box-shadow: none;
-  }
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
