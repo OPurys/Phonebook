@@ -1,19 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const modalSlice = createSlice({
-  name: 'modal',
+const modalDeleteSlice = createSlice({
+  name: 'modalDelete',
   initialState: {
-    isOpen: false,
+    isModalDeleteOpen: false,
   },
   reducers: {
-    openModal: state => {
-      state.isOpen = true;
+    openModalDelete: state => {
+      state.isModalDeleteOpen = true;
     },
-    closeModal: state => {
-      state.isOpen = false;
+    closeModalDelete: state => {
+      state.isModalDeleteOpen = false;
     },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
-export default modalSlice.reducer;
+const modalEditSlice = createSlice({
+  name: 'modalEdit',
+  initialState: {
+    isModalEditOpen: false,
+  },
+  reducers: {
+    openModalEdit: state => {
+      state.isModalEditOpen = true;
+    },
+    closeModalEdit: state => {
+      state.isModalEditOpen = false;
+    },
+  },
+});
+
+export const { openModalDelete, closeModalDelete } = modalDeleteSlice.actions;
+export const modalDeleteReducer = modalDeleteSlice.reducer;
+
+export const { openModalEdit, closeModalEdit } = modalEditSlice.actions;
+export const modalEditReducer = modalEditSlice.reducer;

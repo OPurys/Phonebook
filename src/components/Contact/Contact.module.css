@@ -25,6 +25,12 @@
   gap: 7px;
 }
 
+.wrapperButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .btn {
   padding: 0 15px;
   cursor: pointer;
