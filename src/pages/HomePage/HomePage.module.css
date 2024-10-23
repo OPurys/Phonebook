@@ -1,31 +1,47 @@
 .wrapper {
+  margin: 0 auto;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
+  background-image: linear-gradient(
+      90deg,
+      rgb(0, 176, 155, 0.9) 0%,
+      rgb(150, 201, 61, 0.9) 100%
+    ),
+    url('https://i.etsystatic.com/37989118/r/il/aa423b/4214617266/il_570xN.4214617266_aa55.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
+  max-width: 1000px;
+  height: 500px;
 }
 
 .title {
+  font-size: 32px;
   margin-bottom: 20px;
-  padding: 20px;
-  font-size: 36px;
-  font-weight: 600;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
-  box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
 }
 
-.image {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.description {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.startButton {
+  background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s linear;
+}
+
+.startButton:hover,
+.startButton:focus {
+  transform: scale(0.95);
 }

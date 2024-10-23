@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { MdOutlineAlternateEmail } from 'react-icons/md';
+import { PiBookOpenUserThin } from 'react-icons/pi';
 
 const RegistrationForm = () => {
   const initialValues = {
@@ -52,7 +55,10 @@ const RegistrationForm = () => {
     >
       <Form className={css.form}>
         <label className={css.label}>
-          <span>Name</span>
+          <span className={css.accent}>
+            <PiBookOpenUserThin />
+            Name
+          </span>
           <Field
             className={css.input}
             type="text"
@@ -62,7 +68,10 @@ const RegistrationForm = () => {
           <ErrorMessage className={css.error} name="name" component="span" />
         </label>
         <label className={css.label}>
-          <span>Email</span>
+          <span className={css.accent}>
+            <MdOutlineAlternateEmail />
+            Email
+          </span>
           <Field
             className={css.input}
             type="email"
@@ -72,7 +81,10 @@ const RegistrationForm = () => {
           <ErrorMessage className={css.error} name="email" component="span" />
         </label>
         <label className={css.label}>
-          <span>Password</span>
+          <span className={css.accent}>
+            <RiLockPasswordFill />
+            Password
+          </span>
           <Field
             className={css.input}
             type="password"

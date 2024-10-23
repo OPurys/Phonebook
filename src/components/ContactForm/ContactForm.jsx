@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
 import toast from 'react-hot-toast';
+import { PiBookOpenUserThin } from 'react-icons/pi';
+import { BiPhone } from 'react-icons/bi';
 
 const ContactForm = () => {
   const initialValues = {
@@ -42,7 +44,10 @@ const ContactForm = () => {
     >
       <Form className={css.form}>
         <label className={css.label}>
-          <span>Name</span>
+          <span className={css.accent}>
+            <PiBookOpenUserThin />
+            Name
+          </span>
           <Field
             className={css.input}
             type="text"
@@ -52,7 +57,10 @@ const ContactForm = () => {
           <ErrorMessage className={css.error} name="name" component="span" />
         </label>
         <label className={css.label}>
-          <span>Number</span>
+          <span className={css.accent}>
+            <BiPhone />
+            Number
+          </span>
           <Field
             className={css.input}
             type="tel"

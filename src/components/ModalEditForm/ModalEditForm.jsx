@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import { updateContact } from '../../redux/contacts/operations';
 import { GrEdit } from 'react-icons/gr';
+import { PiBookOpenUserThin } from 'react-icons/pi';
+import { BiPhone } from 'react-icons/bi';
 
 const ModalEditForm = ({ onClose, contact }) => {
   const initialValues = {
@@ -48,12 +50,18 @@ const ModalEditForm = ({ onClose, contact }) => {
           Edit your contact
         </p>
         <label className={css.label}>
-          <span>Name</span>
+          <span className={css.accent}>
+            <PiBookOpenUserThin />
+            Name
+          </span>
           <Field className={css.input} type="text" name="name" />
           <ErrorMessage className={css.error} name="name" component="span" />
         </label>
         <label className={css.label}>
-          <span>Number</span>
+          <span className={css.accent}>
+            <BiPhone />
+            Number
+          </span>
           <Field className={css.input} type="tel" name="number" />
           <ErrorMessage className={css.error} name="number" component="span" />
         </label>

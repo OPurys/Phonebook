@@ -19,7 +19,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <DocumentTitle>Contacts</DocumentTitle>
       <h1 className={css.title}>
         <GiNotebook className={css.icon} />
