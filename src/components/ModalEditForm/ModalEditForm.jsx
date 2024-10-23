@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import { updateContact } from '../../redux/contacts/operations';
+import { GrEdit } from 'react-icons/gr';
 
 const ModalEditForm = ({ onClose, contact }) => {
   const initialValues = {
@@ -15,7 +16,7 @@ const ModalEditForm = ({ onClose, contact }) => {
 
   const handleSubmit = (values, actions) => {
     dispatch(updateContact({ contactId: contact.id, updatedData: values }));
-    toast.success('Contact details have been successfully changed!');
+    toast.success('The contact has been changed!');
     actions.resetForm();
     dispatch(onClose);
   };
@@ -42,6 +43,10 @@ const ModalEditForm = ({ onClose, contact }) => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
+        <p className={css.text}>
+          <GrEdit />
+          Edit your contact
+        </p>
         <label className={css.label}>
           <span>Name</span>
           <Field className={css.input} type="text" name="name" />

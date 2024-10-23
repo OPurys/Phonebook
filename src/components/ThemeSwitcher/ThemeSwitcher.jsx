@@ -3,6 +3,8 @@ import css from './ThemeSwitcher.module.css';
 import { useEffect } from 'react';
 import { toggleTheme } from '../../redux/theme/slice';
 import { selectIsDarkMode } from '../../redux/theme/selectors';
+import { BsMoonStarsFill } from 'react-icons/bs';
+import { FaRegSun } from 'react-icons/fa6';
 
 const ThemeSwitcher = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ const ThemeSwitcher = () => {
           className={`${css.switchToggle} ${isDarkMode ? css.toggleOn : ''}`}
         ></div>
       </div>
+      {isDarkMode ? <BsMoonStarsFill /> : <FaRegSun />}
     </div>
   );
 };

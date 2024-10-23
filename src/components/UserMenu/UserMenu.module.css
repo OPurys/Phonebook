@@ -5,17 +5,20 @@
   font-size: 18px;
 }
 
+.user {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .btn {
   padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s linear;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #0056b3;
+  transform: scale(0.95);
 }

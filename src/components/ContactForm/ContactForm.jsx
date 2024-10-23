@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     dispatch(addContact(values));
-    toast.success('This contact has been successfully added!');
+    toast.success('The contact has been added!');
     actions.resetForm();
   };
 
@@ -23,7 +23,7 @@ const ContactForm = () => {
     name: Yup.string()
       .min(3, 'Too Short!')
       .max(50, 'Too Long!')
-      .required('Required'),
+      .required('Name is required'),
     number: Yup.string()
       .matches(
         /^\+?[1-9]\d{0,14}(-\d{1,14})*$/,
@@ -31,7 +31,7 @@ const ContactForm = () => {
       )
       .min(3)
       .max(16)
-      .required('Required'),
+      .required('Number is required'),
   });
 
   return (
@@ -43,12 +43,22 @@ const ContactForm = () => {
       <Form className={css.form}>
         <label className={css.label}>
           <span>Name</span>
-          <Field className={css.input} type="text" name="name" />
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            placeholder="Please enter a name..."
+          />
           <ErrorMessage className={css.error} name="name" component="span" />
         </label>
         <label className={css.label}>
           <span>Number</span>
-          <Field className={css.input} type="tel" name="number" />
+          <Field
+            className={css.input}
+            type="tel"
+            name="number"
+            placeholder="Please enter a phone number..."
+          />
           <ErrorMessage className={css.error} name="number" component="span" />
         </label>
         <button className={css.btn} type="submit">

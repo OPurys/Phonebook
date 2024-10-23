@@ -31,21 +31,21 @@ const Contact = ({ contact }) => {
           {contact.name}
         </h2>
         <p className={css.phone}>
-          <FaPhoneAlt size={15} />
+          <FaPhoneAlt className={css.icon} size={15} />
           {contact.number}
         </p>
         {isModalEditOpen && <ModalEdit contact={contact} />}
       </div>
       <div className={css.wrapperButtons}>
+        <button className={css.btn} type="button" onClick={handleModalEditOpen}>
+          Edit
+        </button>
         <button
           className={css.btn}
           type="button"
           onClick={handleModalDeleteOpen}
         >
           Delete
-        </button>
-        <button className={css.btn} type="button" onClick={handleModalEditOpen}>
-          Edit
         </button>
       </div>
       {isModalDeleteOpen && <ModalDelete contact={contact} />}

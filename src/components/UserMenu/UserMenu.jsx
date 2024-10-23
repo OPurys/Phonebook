@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './UserMenu.module.css';
 import { selectUser } from '../../redux/auth/selectors';
 import { logout } from '../../redux/auth/operations';
+import { PiUserCircleCheck } from 'react-icons/pi';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -9,7 +10,10 @@ const UserMenu = () => {
 
   return (
     <div className={css.wrapper}>
-      <p>Welcome, {user.name}</p>
+      <p className={css.user}>
+        <PiUserCircleCheck size={25} />
+        Welcome, {user.name}
+      </p>
       <button
         className={css.btn}
         type="button"

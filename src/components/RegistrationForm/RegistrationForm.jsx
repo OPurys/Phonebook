@@ -1,8 +1,9 @@
-import { Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import css from './RegistrationForm.module.css';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
 
 const RegistrationForm = () => {
   const initialValues = {
@@ -10,6 +11,21 @@ const RegistrationForm = () => {
     email: '',
     password: '',
   };
+
+  const FeedbackSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Name is required'),
+    email: Yup.string()
+      .required('Email is required')
+      .email('Incorrect email format'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(8, 'The password must contain at least 8 characters')
+      .matches(/[a-zA-Z]/, 'The password must contain at least one letter')
+      .matches(/[0-9]/, 'The password must contain at least one digit'),
+  });
 
   const dispatch = useDispatch();
 
@@ -29,22 +45,48 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={FeedbackSchema}
+    >
       <Form className={css.form}>
         <label className={css.label}>
           <span>Name</span>
-          <Field className={css.input} type="text" name="name" />
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            placeholder="Enter your name..."
+          />
+          <ErrorMessage className={css.error} name="name" component="span" />
         </label>
         <label className={css.label}>
           <span>Email</span>
-          <Field className={css.input} type="email" name="email" />
+          <Field
+            className={css.input}
+            type="email"
+            name="email"
+            placeholder="Enter your email..."
+          />
+          <ErrorMessage className={css.error} name="email" component="span" />
         </label>
         <label className={css.label}>
           <span>Password</span>
-          <Field className={css.input} type="password" name="password" />
+          <Field
+            className={css.input}
+            type="password"
+            name="password"
+            placeholder="Enter your password..."
+          />
+          <ErrorMessage
+            className={css.error}
+            name="password"
+            component="span"
+          />
         </label>
         <button className={css.btn} type="submit">
-          Register
+          Sign up
         </button>
       </Form>
     </Formik>

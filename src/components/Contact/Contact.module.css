@@ -2,27 +2,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background-color 0.3s;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
+  box-shadow: 3px 3px 5px 5px rgba(0, 176, 155, 0.5);
+  transition: background-color 0.3s ease;
 }
 
 .item:hover {
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
 }
 
 .subtitle {
   display: flex;
   align-items: center;
   font-size: 18px;
-  color: #333;
+  font-weight: 600;
+  margin: 0;
+  gap: 10px;
 }
 
 .phone {
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: #666;
+  margin: 5px 0 0 0;
+  gap: 12px;
+}
+
+.icon {
+  margin-left: 3px;
 }
 
 .wrapperButtons {
@@ -31,20 +41,14 @@
 }
 
 .btn {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: transform 0.3s linear;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0);
+.btn:hover,
+.btn:focus {
+  transform: scale(0.95);
 }

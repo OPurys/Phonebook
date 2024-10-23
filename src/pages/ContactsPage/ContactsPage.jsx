@@ -8,6 +8,7 @@ import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
 import css from './ContactPage.module.css';
+import { GiNotebook } from 'react-icons/gi';
 
 const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);
@@ -20,7 +21,10 @@ const ContactsPage = () => {
   return (
     <div>
       <DocumentTitle>Contacts</DocumentTitle>
-      <h1 className={css.title}>Phonebook</h1>
+      <h1 className={css.title}>
+        <GiNotebook className={css.icon} />
+        Phonebook
+      </h1>
       <ContactForm />
       <SearchBox />
       {isLoading && <Loader />}

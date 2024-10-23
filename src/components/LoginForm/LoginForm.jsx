@@ -29,11 +29,21 @@ const LoginForm = () => {
       <Form className={css.form}>
         <label className={css.label}>
           <span>Email</span>
-          <Field className={css.input} type="email" name="email" />
+          <Field
+            className={css.input}
+            type="email"
+            name="email"
+            placeholder="Enter your email..."
+          />
         </label>
         <label className={css.label}>
           <span>Password</span>
-          <Field className={css.input} type="password" name="password" />
+          <Field
+            className={css.input}
+            type="password"
+            name="password"
+            placeholder="Enter your password..."
+          />
         </label>
         <button className={css.btn} type="submit">
           Log in
