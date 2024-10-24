@@ -1,15 +1,11 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsModalDeleteOpen } from '../../redux/modal/selectors';
 import { closeModalDelete } from '../../redux/modal/slice';
 import { deleteContact } from '../../redux/contacts/operations';
 import toast from 'react-hot-toast';
+import ModalDeleteInner from '../ModalDeleteInner/ModalDeleteInner';
 
 export default function ModalDelete({ contact }) {
   const dispatch = useDispatch();
@@ -32,26 +28,16 @@ export default function ModalDelete({ contact }) {
   return (
     <React.Fragment>
       <Dialog
+        PaperProps={{
+          sx: { borderRadius: '8px', color: 'currentcolor' },
+        }}
         open={isModalDeleteOpen}
         onClose={handleModalDeleteClose}
-        aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">
-          {'Delete confirmation'}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            This contact will be permanently deleted. Do you agree?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleModalDeleteClose}>
-            Disagree
-          </Button>
-          <Button onClick={handleDelete} autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
+        <ModalDeleteInner
+          onClose={handleModalDeleteClose}
+          onDelete={handleDelete}
+        />
       </Dialog>
     </React.Fragment>
   );

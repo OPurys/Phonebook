@@ -1,11 +1,12 @@
 .form {
+  min-width: 435px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px;
   background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
   box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
-  color: #ffd700;
+  border-radius: 8px;
 }
 
 .label {
@@ -32,15 +33,16 @@
 }
 
 .wrapperButtons {
+  margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 }
 
 .btn {
   padding: 10px 15px;
   background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
   border-radius: 5px;
-  color: #ffd700;
   transition: transform 0.3s linear;
 }
 
@@ -49,7 +51,8 @@
   transform: scale(0.95);
 }
 
-.text {
+.title {
+  font-weight: 500;
   font-size: 18px;
   display: flex;
   align-items: center;

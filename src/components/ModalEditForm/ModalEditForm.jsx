@@ -27,7 +27,7 @@ const ModalEditForm = ({ onClose, contact }) => {
     name: Yup.string()
       .min(3, 'Too Short!')
       .max(50, 'Too Long!')
-      .required('Required'),
+      .required('Name is required'),
     number: Yup.string()
       .matches(
         /^\+?[1-9]\d{0,14}(-\d{1,14})*$/,
@@ -35,7 +35,7 @@ const ModalEditForm = ({ onClose, contact }) => {
       )
       .min(3)
       .max(16)
-      .required('Required'),
+      .required('Number is required'),
   });
 
   return (
@@ -45,10 +45,10 @@ const ModalEditForm = ({ onClose, contact }) => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
-        <p className={css.text}>
+        <h2 className={css.title}>
           <GrEdit />
           Edit your contact
-        </p>
+        </h2>
         <label className={css.label}>
           <span className={css.accent}>
             <PiBookOpenUserThin />

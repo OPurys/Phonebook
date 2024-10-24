@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import css from './HomePage.module.css';
 
@@ -10,7 +11,18 @@ const HomePage = () => {
         Here you can easily manage your contacts. Add, edit and delete contacts
         as needed.
       </p>
-      <button className={css.startButton}>Get started</button>
+      <p className={css.info}>
+        If you are not registered yet, please&nbsp;
+        <Link className={css.link} to="/register">
+          sign up
+        </Link>
+        to access all the features of the site. If you already have an
+        account,&nbsp;
+        <Link className={css.link} to="/login">
+          log in
+        </Link>
+        to the system.
+      </p>
     </div>
   );
 };

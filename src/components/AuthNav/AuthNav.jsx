@@ -13,11 +13,11 @@ const AuthNav = () => {
     <div className={css.wrapper}>
       <NavLink className={buildLinkClass} to="/register">
         <MdAppRegistration />
-        Sign up
+        Sign Up
       </NavLink>
       <NavLink className={buildLinkClass} to="/login">
         <IoIosLogIn />
-        Log in
+        Log In
       </NavLink>
     </div>
   );

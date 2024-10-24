@@ -54,7 +54,7 @@ const LoginForm = () => {
           />
         </label>
         <button className={css.btn} type="submit">
-          Log in
+          Log In
         </button>
       </Form>
     </Formik>
