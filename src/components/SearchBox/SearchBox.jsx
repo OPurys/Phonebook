@@ -7,7 +7,7 @@ const SearchBox = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <label className={css.label}>
         <span className={css.accent}>
           <GiArchiveResearch size={20} />

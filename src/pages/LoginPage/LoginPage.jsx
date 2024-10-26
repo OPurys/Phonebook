@@ -7,7 +7,7 @@ const LoginPage = () => {
   return (
     <div className={css.wrapper}>
       <DocumentTitle>Login</DocumentTitle>
-      <h2 className={css.title}>Log In</h2>
+      <h1 className={css.title}>Log In</h1>
       <p className={css.text}>
         You do not have an account yet?&nbsp;
         <Link className={css.link} to="/register">

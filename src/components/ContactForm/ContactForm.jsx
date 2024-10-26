@@ -6,6 +6,7 @@ import { addContact } from '../../redux/contacts/operations';
 import toast from 'react-hot-toast';
 import { PiBookOpenUserThin } from 'react-icons/pi';
 import { BiPhone } from 'react-icons/bi';
+import { MdFormatListBulletedAdd } from 'react-icons/md';
 
 const ContactForm = () => {
   const initialValues = {
@@ -43,6 +44,10 @@ const ContactForm = () => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
+        <p className={css.titleText}>
+          <MdFormatListBulletedAdd />
+          Add a new contact
+        </p>
         <label className={css.label}>
           <span className={css.accent}>
             <PiBookOpenUserThin />

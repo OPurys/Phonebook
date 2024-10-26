@@ -16,12 +16,12 @@ const HomePage = () => {
         <Link className={css.link} to="/register">
           sign up
         </Link>
-        to access all the features of the site. If you already have an
+        &nbsp;to access all the features of the site. If you already have an
         account,&nbsp;
         <Link className={css.link} to="/login">
           log in
         </Link>
-        to the system.
+        &nbsp;to the system.
       </p>
     </div>
   );

@@ -25,7 +25,16 @@ const ContactsPage = () => {
         <GiNotebook className={css.icon} />
         Phonebook
       </h1>
-      <ContactForm />
+      <div className={css.innerWrapper}>
+        <ContactForm />
+        <div className={css.imageWrap}>
+          <img
+            className={css.image}
+            src="https://cdni.iconscout.com/illustration/premium/thumb/young-girl-standing-with-contact-book-illustration-download-in-svg-png-gif-file-formats--call-logo-phone-address-technical-support-pack-services-illustrations-8070812.png"
+            alt="Woman with phone"
+          />
+        </div>
+      </div>
       <SearchBox />
       {isLoading && <Loader />}
       <ContactList />

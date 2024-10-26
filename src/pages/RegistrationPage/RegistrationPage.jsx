@@ -7,7 +7,7 @@ const RegistrationPage = () => {
   return (
     <div className={css.wrapper}>
       <DocumentTitle>Registration</DocumentTitle>
-      <h2 className={css.title}>Sign Up</h2>
+      <h1 className={css.title}>Sign Up</h1>
       <p className={css.text}>
         Already have an account?&nbsp;
         <Link className={css.link} to="/login">

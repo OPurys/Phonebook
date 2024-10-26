@@ -1,13 +1,10 @@
 .list {
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 700px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .text {
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +14,4 @@
   border-radius: 8px;
   background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
   box-shadow: 3px 3px 5px 5px rgba(0, 176, 155, 0.5);
-  max-width: 400px;
-  max-width: 400px;
 }
