@@ -1,19 +1,21 @@
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 18px;
+  gap: 0.5rem;
+  font-size: 1.13rem;
 }
 
 .user {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.31rem;
 }
 
 .btn {
-  padding: 8px 15px;
+  padding: 0.5rem 0.94rem;
   background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
   border-radius: 5px;
   transition: transform 0.3s linear;
 }

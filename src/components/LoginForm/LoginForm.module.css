@@ -1,39 +1,46 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px;
+  gap: 0.94rem;
+  padding: 1.25rem;
   background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
   border-radius: 8px;
   box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
-  width: 400px;
+  width: 100%;
+  max-width: 25rem;
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.31rem;
 }
 
 .input {
-  padding: 10px;
+  padding: 0.63rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s linear;
   background: linear-gradient(90deg, #96c93d 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
 }
 
+.input:hover,
 .input:focus {
   border-color: #5b5e15;
 }
 
 .btn {
-  padding: 10px 15px;
+  margin-top: 1.25rem;
+  padding: 0.63rem 0.94rem;
   background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
   border-radius: 5px;
   transition: transform 0.3s linear;
 }
@@ -46,5 +53,5 @@
 .accent {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.31rem;
 }

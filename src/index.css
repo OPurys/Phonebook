@@ -1,5 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 12px;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +14,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
 }
 
 *,
@@ -23,7 +32,6 @@
 
 body {
   margin: 0;
-  padding: 15px;
   color: var(--text-color);
   background-color: var(--background-color);
   background-image: var(--background-image);
@@ -62,6 +70,10 @@ button {
   outline: none;
   color: inherit;
   font-size: inherit;
+}
+
+input::placeholder {
+  font-size: 0.8rem;
 }
 
 a {

@@ -1,37 +1,40 @@
 .wrapper {
-  padding: 20px;
+  padding: 1.25rem;
   border-radius: 8px;
   background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
   box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
 }
 
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 0.94rem;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.13rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 0.31rem;
 }
 
 .text {
-  margin-bottom: 30px;
+  margin-bottom: 1.88rem;
+  text-align: center;
 }
 
 .wrapperButtons {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 2.5rem;
 }
 
 .btn {
-  padding: 10px 15px;
+  padding: 0.63rem 0.94rem;
   background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
   border-radius: 5px;
   transition: transform 0.3s linear;
-  min-width: 95px;
+  min-width: 5.94rem;
 }
 
 .btn:hover,

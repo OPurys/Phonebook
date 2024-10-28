@@ -1,10 +1,10 @@
 .form {
-  padding: 20px;
+  padding: 1.25rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 25rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
   border-radius: 8px;
   background: linear-gradient(90deg, #00b09b 0%, #96c93d 100%);
   box-shadow: 3px 3px 15px 5px rgba(0, 176, 155, 0.5);
@@ -12,47 +12,53 @@
 
 .titleText {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 0.31rem;
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.31rem;
   font-weight: 500;
 }
 
 .input {
-  padding: 10px;
+  padding: 0.63rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   background: linear-gradient(90deg, #96c93d 0%, rgba(255, 255, 255, 0) 100%);
   transition: border-color 0.3s linear;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
 }
 
+.input:hover,
 .input:focus {
   border-color: #5b5e15;
 }
 
 .error {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #ff4d4f;
-  margin-top: 5px;
+  margin-top: 0.31rem;
 }
 
 .btn {
-  padding: 10px;
+  margin-top: 1.25rem;
+  padding: 0.63rem;
   background: linear-gradient(90deg, #005f47 0%, #00b09b 100%);
   border-radius: 4px;
   transition: transform 0.3s linear;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2),
+    0px 2px 5px rgba(0, 176, 155, 0.3);
 }
 
 .btn:hover,
@@ -63,5 +69,5 @@
 .accent {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.31rem;
 }

@@ -18,7 +18,12 @@ export default function ModalEdit({ contact }) {
     <React.Fragment>
       <Dialog
         PaperProps={{
-          sx: { borderRadius: '8px', color: 'currentcolor' },
+          sx: {
+            borderRadius: '8px',
+            color: 'currentcolor',
+            width: '100%',
+            maxWidth: '25rem',
+          },
         }}
         open={isModalEditOpen}
         onClose={handleModalEditClose}

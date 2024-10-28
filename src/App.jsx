@@ -6,6 +6,7 @@ import { refreshUser } from './redux/auth/operations';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute';
 import { selectIsRefreshing } from './redux/auth/selectors';
+import Container from './components/Container/Container';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
@@ -26,38 +27,43 @@ const App = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   return isRefreshing ? null : (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="register"
-            element={
-              <RestrictedRoute
-                component={<RegistrationPage />}
-                redirectTo="/contacts"
-              />
-            }
-          />
-          <Route
-            path="login"
-            element={
-              <RestrictedRoute
-                component={<LoginPage />}
-                redirectTo="/contacts"
-              />
-            }
-          />
-          <Route
-            path="contacts"
-            element={
-              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
-            }
-          />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+    <Container>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="register"
+              element={
+                <RestrictedRoute
+                  component={<RegistrationPage />}
+                  redirectTo="/contacts"
+                />
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <RestrictedRoute
+                  component={<LoginPage />}
+                  redirectTo="/contacts"
+                />
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute
+                  component={<ContactsPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </Container>
   );
 };
 

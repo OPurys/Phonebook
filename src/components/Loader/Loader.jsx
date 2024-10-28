@@ -1,16 +1,20 @@
-import { DNA } from 'react-loader-spinner';
+import { CirclesWithBar } from 'react-loader-spinner';
 import css from './Loader.module.css';
 
 const Loader = () => {
   return (
     <div className={css.wrapper}>
-      <DNA
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="dna-loading"
+      <CirclesWithBar
+        height="100"
+        width="100"
+        color="#96c93d"
+        outerCircleColor="#96c93d"
+        innerCircleColor="#96c93d"
+        barColor="#96c93d"
+        ariaLabel="circles-with-bar-loading"
         wrapperStyle={{}}
-        wrapperClass="dna-wrapper"
+        wrapperClass=""
+        visible={true}
       />
     </div>
   );
