@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import { Routes, Route } from 'react-router-dom';
@@ -7,24 +6,24 @@ import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute';
 import { selectIsRefreshing } from './redux/auth/selectors';
 import Container from './components/Container/Container';
+import { useAppDispatch, useAppSelector } from './redux/hooks';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
-const RegistrationPage = lazy(() =>
-  import('./pages/RegistrationPage/RegistrationPage')
+const RegistrationPage = lazy(
+  () => import('./pages/RegistrationPage/RegistrationPage')
 );
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const isRefreshing = useAppSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
-  const isRefreshing = useSelector(selectIsRefreshing);
 
   return isRefreshing ? null : (
     <Container>
