@@ -33,8 +33,11 @@ const RegistrationForm = () => {
       } else if (register.rejected.match(resultAction)) {
         toast.error('This email is already taken!');
       }
-    } catch (error: any) {
-      console.error(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
+      console.error('An unknown error occurred');
     }
   };
 

@@ -1,45 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type ModalDeleteState = {
-  isModalDeleteOpen: boolean;
+interface ModalState {
+  deleteContactId: string | null;
+  editContactId: string | null;
+}
+
+const initialState: ModalState = {
+  deleteContactId: null,
+  editContactId: null,
 };
 
-type ModalOpenState = {
-  isModalEditOpen: boolean;
-};
-
-const modalDeleteSlice = createSlice({
-  name: 'modalDelete',
-  initialState: {
-    isModalDeleteOpen: false,
-  } as ModalDeleteState,
+const modalSlice = createSlice({
+  name: 'modal',
+  initialState,
   reducers: {
-    openModalDelete: state => {
-      state.isModalDeleteOpen = true;
+    openModalDelete: (state, action: PayloadAction<string>) => {
+      state.deleteContactId = action.payload;
     },
     closeModalDelete: state => {
-      state.isModalDeleteOpen = false;
+      state.deleteContactId = null;
     },
-  },
-});
-
-const modalEditSlice = createSlice({
-  name: 'modalEdit',
-  initialState: {
-    isModalEditOpen: false,
-  } as ModalOpenState,
-  reducers: {
-    openModalEdit: state => {
-      state.isModalEditOpen = true;
+    openModalEdit: (state, action: PayloadAction<string>) => {
+      state.editContactId = action.payload;
     },
     closeModalEdit: state => {
-      state.isModalEditOpen = false;
+      state.editContactId = null;
     },
   },
 });
 
-export const { openModalDelete, closeModalDelete } = modalDeleteSlice.actions;
-export const modalDeleteReducer = modalDeleteSlice.reducer;
-
-export const { openModalEdit, closeModalEdit } = modalEditSlice.actions;
-export const modalEditReducer = modalEditSlice.reducer;
+export const {
+  openModalDelete,
+  closeModalDelete,
+  openModalEdit,
+  closeModalEdit,
+} = modalSlice.actions;
+export const modalReducer = modalSlice.reducer;

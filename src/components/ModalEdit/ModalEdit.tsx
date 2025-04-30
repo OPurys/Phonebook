@@ -26,7 +26,7 @@ export default function ModalEdit({ contact }: ModalEditProps) {
             maxWidth: '25rem',
           },
         }}
-        open={isModalEditOpen}
+        open={Boolean(isModalEditOpen)}
         onClose={handleModalEditClose}
       >
         <DialogContent sx={{ padding: 0 }}>

@@ -21,8 +21,11 @@ export default function ModalDelete({ contact }: ModalDeleteProps) {
       await dispatch(deleteContact(contact.id));
       dispatch(closeModalDelete());
       toast.success('This contact has been deleted!');
-    } catch (error) {
-      console.error('Error occurred:', error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
+      console.error('An unknown error occurred');
     }
   };
 
@@ -32,7 +35,7 @@ export default function ModalDelete({ contact }: ModalDeleteProps) {
         PaperProps={{
           sx: { borderRadius: '8px', color: 'currentcolor' },
         }}
-        open={isModalDeleteOpen}
+        open={Boolean(isModalDeleteOpen)}
         onClose={handleModalDeleteClose}
       >
         <ModalDeleteInner

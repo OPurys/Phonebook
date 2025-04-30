@@ -17,11 +17,11 @@ const Contact = ({ contact }: ContactProps) => {
   const isModalEditOpen = useAppSelector(selectIsModalEditOpen);
 
   const handleModalDeleteOpen = () => {
-    dispatch(openModalDelete());
+    dispatch(openModalDelete(contact.id));
   };
 
   const handleModalEditOpen = () => {
-    dispatch(openModalEdit());
+    dispatch(openModalEdit(contact.id));
   };
 
   return (
@@ -35,7 +35,7 @@ const Contact = ({ contact }: ContactProps) => {
           <FaPhoneAlt className={css.icon} size={15} />
           {contact.number}
         </p>
-        {isModalEditOpen && <ModalEdit contact={contact} />}
+        {isModalEditOpen === contact.id && <ModalEdit contact={contact} />}
       </div>
       <div className={css.wrapperButtons}>
         <button className={css.btn} type="button" onClick={handleModalEditOpen}>
@@ -49,7 +49,7 @@ const Contact = ({ contact }: ContactProps) => {
           Delete
         </button>
       </div>
-      {isModalDeleteOpen && <ModalDelete contact={contact} />}
+      {isModalDeleteOpen === contact.id && <ModalDelete contact={contact} />}
     </li>
   );
 };

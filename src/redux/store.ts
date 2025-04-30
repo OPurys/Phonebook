@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './contacts/slice';
 import filtersReducer from './filters/slice';
 import authReducer from './auth/slice';
-import { modalDeleteReducer, modalEditReducer } from './modal/slice';
+import { modalReducer } from './modal/slice';
 import themeReducer, { ThemeState } from './theme/slice';
 import {
   persistStore,
@@ -34,8 +34,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer<AuthState>(persistConfig, authReducer),
     contacts: contactsReducer,
-    modalDelete: modalDeleteReducer,
-    modalEdit: modalEditReducer,
+    modal: modalReducer,
     theme: persistReducer<ThemeState>(persistThemeConfig, themeReducer),
     filters: filtersReducer,
   },

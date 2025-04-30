@@ -1,6 +1,6 @@
 import { RootState } from '../store';
 
 export const selectIsModalDeleteOpen = (state: RootState) =>
-  state.modalDelete.isModalDeleteOpen;
+  state.modal.deleteContactId;
 export const selectIsModalEditOpen = (state: RootState) =>
-  state.modalEdit.isModalEditOpen;
+  state.modal.editContactId;
